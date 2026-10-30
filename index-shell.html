@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>JobPilot AI — Executive Job Search &amp; Career Copilot</title>
+<meta name="description" content="AI-powered job search, resume tailoring, cover letters, interview prep, and Kanban application pipeline tracking." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23daa520' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='12 2 19 21 12 17 5 21 12 2'/%3E%3C/svg%3E" />
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-logo" title="JobPilot AI">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="12 2 19 21 12 17 5 21 12 2"></polygon>
+        </svg>
+      </div>
+      <div>
+        <div class="brand-name">JobPilot <span class="ai-badge">AI</span></div>
+        <div class="brand-sub">Executive Career Copilot</div>
+      </div>
+    </div>
+
+    <nav class="nav" id="nav">
+      <a href="#/dashboard" data-route="dashboard" class="nav-item">
+        <span class="nav-ico" data-icon="dashboard"></span>
+        <span class="nav-label">Dashboard</span>
+      </a>
+      <a href="#/search" data-route="search" class="nav-item">
+        <span class="nav-ico" data-icon="search"></span>
+        <span class="nav-label">Job Search</span>
+      </a>
+      <a href="#/saved" data-route="saved" class="nav-item">
+        <span class="nav-ico" data-icon="star"></span>
+        <span class="nav-label">Saved Jobs</span>
+        <span class="pill" id="nav-saved-count">0</span>
+      </a>
+      <a href="#/tracker" data-route="tracker" class="nav-item">
+        <span class="nav-ico" data-icon="pipeline"></span>
+        <span class="nav-label">Pipeline</span>
+        <span class="pill" id="nav-app-count">0</span>
+      </a>
+      <a href="#/resume" data-route="resume" class="nav-item">
+        <span class="nav-ico" data-icon="resume"></span>
+        <span class="nav-label">My Resume</span>
+      </a>
+      <a href="#/studio" data-route="studio" class="nav-item">
+        <span class="nav-ico" data-icon="studio"></span>
+        <span class="nav-label">AI Studio</span>
+      </a>
+      <a href="#/settings" data-route="settings" class="nav-item">
+        <span class="nav-ico" data-icon="settings"></span>
+        <span class="nav-label">Settings</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-foot">
+      <div class="ai-status" id="ai-status-chip">
+        <span class="dot"></span>
+        <span class="ai-status-text">Template mode (Offline)</span>
+      </div>
+      <div class="foot-note">
+        <span>Live Feeds: Remotive &amp; Arbeitnow</span>
+        <span class="foot-lock">🔒 100% Client-Side Private</span>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main" id="main">
+    <header class="topbar">
+      <button class="icon-btn menu-btn" id="menu-btn" title="Toggle Navigation Menu" aria-label="Toggle Navigation Menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <div class="topbar-title-wrap">
+        <h1 class="view-title" id="view-title">Dashboard</h1>
+      </div>
+      <div class="topbar-right">
+        <div class="system-badge" id="system-badge">
+          <span class="badge-pulse"></span>
+          <span class="badge-text">READY</span>
+        </div>
+        <span class="clock" id="clock"></span>
+      </div>
+    </header>
+    <div class="view" id="view"></div>
+  </main>
+</div>
+
+<div class="modal-backdrop" id="modal-backdrop" hidden>
+  <div class="modal" id="modal" role="dialog" aria-modal="true">
+    <button class="icon-btn modal-close" id="modal-close" title="Close Modal" aria-label="Close Modal">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<div class="toasts" id="toasts"></div>
+
+<script src="js/store.js"></script>
+<script src="js/jobs.js"></script>
+<script src="js/ai.js"></script>
+<script src="js/app.js"></script>
+<script src="js/views-a.js"></script>
+<script src="js/views-b.js"></script>
+<script src="js/app-tail.js"></script>
+</body>
+</html>
